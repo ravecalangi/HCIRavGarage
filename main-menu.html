@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RavGarage - Customer Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main-menu.css">
+</head>
+<body>
+    <header>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <h1>RavGarage</h1>
+        <div class="header-links">
+            <span class="link" onclick="showScreen('searchScreen')">Search</span>
+            <span class="link" onclick="showScreen('addScreen')">Add</span>
+            <span class="link" onclick="showScreen('editScreen')">Edit</span>
+            <span class="link" onclick="saveInfo()">Save</span>
+            <span class="link" onclick="logout()">Logout</span>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <div class="profile">
+            <img src="black cat profile.jpg">
+            <h3>User</h3>
+        </div>
+        <button onclick="showScreen('searchScreen')">Search Customers</button>
+        <button onclick="showScreen('addScreen')">Add Customer</button>
+        <button onclick="showScreen('editScreen')">Edit Customer</button>
+        <button onclick="showScreen('categoryScreen')">Search by Categories</button>
+        <button onclick="showScreen('messagesScreen')">My Messages</button>
+        <button onclick="showScreen('mailScreen')">Mail</button>
+        <button onclick="showScreen('sellerScreen')">Seller Settings</button>
+        <button onclick="showScreen('buyerScreen')">Buyer Settings</button>
+        <button onclick="showScreen('notificationScreen')">Notification</button>
+        <button onclick="saveInfo()">Save</button>
+        <button onclick="logout()">Log Out</button>
+    </div>
+
+    <div class="content">
+        <div class="container menu" id="searchScreen">
+            <h2>Search Customers</h2>
+            <select id="searchBy">
+                <option>Name</option>
+                <option>Last Name</option>
+                <option>Customer ID</option>
+            </select>
+            <div class="input-group">
+                <input type="text" placeholder="Search..." id="searchInput">
+            </div>
+            <button onclick="backToMain()">Back</button>
+        </div>
+
+        <div class="container menu" id="addScreen">
+            <h2>Add Customer</h2>
+            <div class="input-group">
+                <input type="text" placeholder="First Name" id="addFirstName">
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Last Name" id="addLastName">
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Sex" id="addSex">
+            </div>
+            <div class="input-group">
+                <input type="number" placeholder="Age" id="addAge">
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Address" id="addAddress">
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Occupation" id="addOccupation">
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Cellphone Number" id="addPhone">
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Marital Status" id="addMaritalStatus">
+            </div>
+            <button onclick="backToMain()">Back</button>
+        </div>
+
+        <div class="container menu" id="editScreen">
+            <h2>Edit Customer</h2>
+            <div class="input-group">
+                <input type="text" placeholder="First Name" id="editFirstName">
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Last Name" id="editLastName">
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Sex" id="editSex">
+            </div>
+            <div class="input-group">
+                <input type="number" placeholder="Age" id="editAge">
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Address" id="editAddress">
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Occupation" id="editOccupation">
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Cellphone Number" id="editPhone">
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Marital Status" id="editMaritalStatus">
+            </div>
+            <button onclick="backToMain()">Back</button>
+        </div>
+
+        <div class="container menu" id="categoryScreen">
+            <h2>Search by Categories</h2>
+            <select id="categorySelect">
+                <option>Sedan</option>
+                <option>SUV</option>
+                <option>Sports</option>
+            </select>
+            <button onclick="backToMain()">Back</button>
+        </div>
+
+        <div class="container menu" id="messagesScreen">
+            <h2>My Messages</h2>
+            <p>Chat interface placeholder</p>
+            <button onclick="backToMain()">Back</button>
+        </div>
+
+        <div class="container menu" id="mailScreen">
+            <h2>Mail</h2>
+            <p>Email interface placeholder</p>
+            <button onclick="backToMain()">Back</button>
+        </div>
+
+        <div class="container menu" id="sellerScreen">
+            <h2>Seller Settings</h2>
+            <p>Seller profile settings placeholder</p>
+            <button onclick="backToMain()">Back</button>
+        </div>
+
+        <div class="container menu" id="buyerScreen">
+            <h2>Buyer Settings</h2>
+            <p>Buyer profile settings placeholder</p>
+            <button onclick="backToMain()">Back</button>
+        </div>
+
+        <div class="container menu" id="notificationScreen">
+            <h2>Notification</h2>
+            <p>Alerts and notifications placeholder</p>
+            <button onclick="backToMain()">Back</button>
+        </div>
+
+        <div class="cars-section">
+            <h2>Featured Cars for Sale</h2>
+            <div class="cars-grid">
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070&auto=format&fit=crop" alt="Tesla Model S">
+                    <h3>Tesla Model S</h3>
+                    <p>$79,990</p>
+                </div>
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=2070&auto=format&fit=crop" alt="Porsche 911">
+                    <h3>Porsche 911</h3>
+                    <p>$120,000</p>
+                </div>
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=2070&auto=format&fit=crop" alt="BMW M4">
+                    <h3>BMW M4</h3>
+                    <p>$74,950</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="savePopup">Information Saved Successfully!</div>
+
+    <script src="main-menu.js"></script>
+</body>
+</html>

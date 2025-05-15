@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RavGarage - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login to RavGarage</h2>
+        <div class="input-group">
+            <input type="text" id="username" placeholder="Username or Email" required>
+        </div>
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Password" required>
+        </div>
+        <button onclick="login()">Sign In</button>
+        <div class="links">
+            <a href="#" onclick="showPopup('Password reset link sent!')">Forgot Password?</a>
+            <a href="#" onclick="showPopup('Redirecting to Sign Up...')">Create Account</a>
+        </div>
+    </div>
+
+    <div class="popup" id="login_popup"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
